@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <li class="nav-item text-left">
+          <a href="#">Highscores</a>
+        </li>
+        <li class="nav-item text-right">
+          Time:
+          <span id="timer">0</span>
+        </li>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div id="startScreen" class="vertical-center text-center">
+        <h1>Coding Quiz</h1>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by ten seconds!
+        </p>
+        <button id="startButton" class="btn btn-info">Start Quiz</button>
+      </div>
+
+      <div id="gameScreen" class="vertical-center text-center hide">
+        <h2 id="question" class="question-text"></h2>
+
+        <div class="choiceContainer"></div>
+
+        <div id="wrongDiv" class="hide">
+          <hr />
+          <p><em>Wrong!</em></p>
+        </div>
+
+        <div id="correctDiv" class="hide">
+          <hr />
+          <p><em>Correct!</em></p>
+        </div>
+      </div>
+
+      <div id="endScreen" class="vertical-center text-center hide">
+        <h2>All done!</h2>
+        <p>Your final score is:<span id="finalScore"> </span></p>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="initialsInput"
+            placeholder="Enter your initials"
+            name="initials"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              id="submit"
+              class="btn btn-outline-info"
+              type="submit"
+              name="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="highScoresScreen" class="vertical-center text-center hide">
+        <h2>All done!</h2>
+
+        <div>
+          <p>Initials: <span id="userInitials"></span></p>
+          <p>Your score: <span id="userScore"></span></p>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <a href="index.html" class="text-white" onclick="location.reload()">
+            Return</a
+          >
+        </button>
+        <button class="btn btn-outline-danger" type="submit">
+          Erase Highscores
+        </button>
+      </div>
+    </div>
+
+    <script src="./assets/questions.js"></script>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>
